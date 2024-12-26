@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="display">00</div>
+    <div id="container">
+      <div id="buttons">
+        <button value="9" onclick="storeValue(this.value)">9</button>
+        <button value="8" onclick="storeValue(this.value)">8</button>
+        <button value="7" onclick="storeValue(this.value)">7</button>
+        <button value="6" onclick="storeValue(this.value)">6</button>
+        <button value="5" onclick="storeValue(this.value)">5</button>
+        <button value="4" onclick="storeValue(this.value)">4</button>
+        <button value="3" onclick="storeValue(this.value)">3</button>
+        <button value="2" onclick="storeValue(this.value)">2</button>
+        <button value="1" onclick="storeValue(this.value)">1</button>
+        <button value="0" onclick="storeValue(this.value)">0</button>
+        <button value="+" onclick="storeValue(this.value)">+</button>
+        <button value="-" onclick="storeValue(this.value)">-</button>
+        <button value="/" onclick="storeValue(this.value)">/</button>
+        <button value="x" onclick="storeValue(this.value)">x</button>
+        <button id="operate">=</button>
+        <button id="clear-btn">Clear</button>
+      </div>
+    </div>
+  </body>
+</html>
