@@ -2,17 +2,18 @@
 let num1 = '';
 let num2 = '';
 let operator = '';
-//function to store the numbers 
+//function to store the numbers and operators
 function storeValue(value) {
   if (value == "+" || value == "-" || value == "/" || value == "x") {
     operator = value;
   }
-  else if (operator === ""){
+  else if (operator === "") {
     num1 += value;
   }
   else {
     num2 += value;
-}
+  }
+  display.textContent = `${num1} ${operator} ${num2}`;
 }
 // create math functions
 function addNum(num1, num2) {
@@ -47,10 +48,23 @@ function calcNum(num1, operator, num2) {
   }
   return result
 };
-//function for result call the calcNum function
+
+//function for result and call the calcNum function
 const operateBtn = document.querySelector("#operate");
 const display = document.querySelector("#display");
+const clearBtn = document.querySelector("#clear-btn");
+const resultDisplay = document.createElement("div");
+
 operateBtn.addEventListener('click', () => {
   result = calcNum(num1, operator, num2);
-  console.log(`${num1} ${operator} ${num2} = ${result}`);
+  num1 = result;
+  num2 = '';
+  operator = '';
+  resultDisplay.textContent = `${result}`
+  display.insertAdjacentElement("afterend", resultDisplay)
+})
+//clear function
+clearBtn.addEventListener('click', () =>{
+  display.innerHTML = "";
+  resultDisplay.innerHTML = "";
 })
