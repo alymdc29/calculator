@@ -48,13 +48,11 @@ function calcNum(num1, operator, num2) {
   }
   return result
 };
-
 //function for result and call the calcNum function
 const operateBtn = document.querySelector("#operate");
 const display = document.querySelector("#display");
 const clearBtn = document.querySelector("#clear-btn");
 const resultDisplay = document.createElement("div");
-
 operateBtn.addEventListener('click', () => {
   result = calcNum(num1, operator, num2);
   num1 = result;
@@ -65,6 +63,10 @@ operateBtn.addEventListener('click', () => {
 })
 //clear function
 clearBtn.addEventListener('click', () =>{
+  result = ''
+  num1 = ''
+  num2 = ''
+  operator = ''
   display.innerHTML = "";
   resultDisplay.innerHTML = "";
 })
